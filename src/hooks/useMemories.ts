@@ -48,10 +48,11 @@ export function useMemories(options: UseMemoriesOptions = {}) {
   }, [fetchMemories]);
 
   useEffect(() => {
-    if (!couple) return;
-    const channel = supabase
-      .channel(`memories-${couple.id}`)
-      .on(
+  if (!couple) return;
+  const channelName = `memories-${couple.id}-${Math.random().toString(36).slice(2)}`;
+  const channel = supabase
+    .channel(channelName)
+    .on(
         "postgres_changes",
         { event: "*", schema: "public", table: "memories", filter: `couple_id=eq.${couple.id}` },
         () => {
