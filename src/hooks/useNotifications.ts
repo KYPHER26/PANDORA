@@ -26,10 +26,11 @@ export function useNotifications() {
   }, [fetchNotifications]);
 
   useEffect(() => {
-    if (!profile) return;
-    const channel = supabase
-      .channel(`notifications-${profile.id}`)
-      .on(
+  if (!profile) return;
+  const channelName = `notifications-${profile.id}-${Math.random().toString(36).slice(2)}`;
+  const channel = supabase
+    .channel(channelName)
+    .on(
         "postgres_changes",
         {
           event: "INSERT",
