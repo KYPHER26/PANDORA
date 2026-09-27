@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Ester &amp; Kypher — Our Story</title>
+    <meta name="description" content="A private relationship diary for Ester and Kypher." />
+
+    <!-- PWA: installable "Add to Home Screen" support -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0B0E14" />
+    <link rel="icon" href="/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Ester & Kypher" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root">
+      <pre id="ek-boot-status" style="color:#fff;background:#111;padding:16px;white-space:pre-wrap;font-size:13px;margin:0;">Loading… if this text never changes or an error appears below, screenshot this.</pre>
+    </div>
+    <script>
+      function showError(msg) {
+        var el = document.getElementById('ek-boot-status') || document.body;
+        el.innerHTML = '<pre style="color:#fff;background:#111;padding:16px;white-space:pre-wrap;font-size:13px;">' + msg + '</pre>';
+      }
+      window.addEventListener('error', function (e) {
+        var msg = (e.error && e.error.stack) ? e.error.stack : (e.message || 'Unknown script error');
+        if (e.filename) msg += '\n\nFile: ' + e.filename + ':' + e.lineno;
+        showError(msg);
+      }, true);
+      window.addEventListener('unhandledrejection', function (e) {
+        showError((e.reason && e.reason.stack) ? e.reason.stack : String(e.reason));
+      });
+
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/sw.js').catch(function () {
+            // Non-fatal: app still works without offline caching.
+          });
+        });
+      }
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
