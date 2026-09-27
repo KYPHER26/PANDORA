@@ -31,7 +31,7 @@ export default function Search() {
       .order("date", { ascending: false });
 
     // Also match tags client-side (array contains, case-insensitive-ish)
-    const tagMatches = (data ?? []).filter((m) => m.tags?.some((t) => t.toLowerCase().includes(q.toLowerCase())));
+    const tagMatches = (data ?? []).filter((m: any) => m.tags?.some((t: string) => t.toLowerCase().includes(q.toLowerCase())));
     const merged = data ?? [];
     for (const t of tagMatches) {
       if (!merged.find((m) => m.id === t.id)) merged.push(t);
