@@ -14,19 +14,21 @@
     />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <pre id="ek-boot-status" style="color:#fff;background:#111;padding:16px;white-space:pre-wrap;font-size:13px;margin:0;">Loading… if this text never changes or an error appears below, screenshot this.</pre>
+    </div>
     <script>
+      function showError(msg) {
+        var el = document.getElementById('ek-boot-status') || document.body;
+        el.innerHTML = '<pre style="color:#fff;background:#111;padding:16px;white-space:pre-wrap;font-size:13px;">' + msg + '</pre>';
+      }
       window.addEventListener('error', function (e) {
-        document.body.innerHTML =
-          '<pre style="color:#fff;background:#111;padding:16px;white-space:pre-wrap;font-size:14px;">' +
-          (e.error && e.error.stack ? e.error.stack : e.message) +
-          '</pre>';
-      });
+        var msg = (e.error && e.error.stack) ? e.error.stack : (e.message || 'Unknown script error');
+        if (e.filename) msg += '\n\nFile: ' + e.filename + ':' + e.lineno;
+        showError(msg);
+      }, true);
       window.addEventListener('unhandledrejection', function (e) {
-        document.body.innerHTML =
-          '<pre style="color:#fff;background:#111;padding:16px;white-space:pre-wrap;font-size:14px;">' +
-          (e.reason && e.reason.stack ? e.reason.stack : e.reason) +
-          '</pre>';
+        showError((e.reason && e.reason.stack) ? e.reason.stack : String(e.reason));
       });
     </script>
     <script type="module" src="/src/main.tsx"></script>
