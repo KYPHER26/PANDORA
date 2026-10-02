@@ -122,7 +122,7 @@ export default function AddMemory() {
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
-            className="rounded-lg border border-hairline bg-transparent px-3 py-2.5 text-sm outline-none focus:border-rose"
+            className="rounded-lg glass-input px-3 py-2.5 text-sm"
           />
         </div>
 
@@ -132,7 +132,7 @@ export default function AddMemory() {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="My day"
-            className="w-full rounded-lg border border-hairline bg-transparent px-3 py-2.5 text-sm outline-none focus:border-rose"
+            className="w-full rounded-lg glass-input px-3 py-2.5 text-sm"
           />
         </div>
 
@@ -142,7 +142,7 @@ export default function AddMemory() {
             value={whatIDid}
             onChange={(e) => setWhatIDid(e.target.value)}
             rows={3}
-            className="w-full rounded-lg border border-hairline bg-transparent px-3 py-2.5 text-sm outline-none focus:border-rose"
+            className="w-full rounded-lg glass-input px-3 py-2.5 text-sm"
           />
         </div>
 
@@ -152,7 +152,7 @@ export default function AddMemory() {
             value={howMyDayWent}
             onChange={(e) => setHowMyDayWent(e.target.value)}
             rows={2}
-            className="w-full rounded-lg border border-hairline bg-transparent px-3 py-2.5 text-sm outline-none focus:border-rose"
+            className="w-full rounded-lg glass-input px-3 py-2.5 text-sm"
           />
         </div>
 
@@ -163,7 +163,7 @@ export default function AddMemory() {
             onChange={(e) => setNoteToPartner(e.target.value)}
             rows={2}
             placeholder="A little note, just for them…"
-            className="w-full rounded-lg border border-hairline bg-transparent px-3 py-2.5 text-sm outline-none focus:border-rose"
+            className="w-full rounded-lg glass-input px-3 py-2.5 text-sm"
           />
         </div>
 
@@ -191,7 +191,7 @@ export default function AddMemory() {
             value={location}
             onChange={(e) => setLocation(e.target.value)}
             placeholder="Where were you?"
-            className="w-full rounded-lg border border-hairline bg-transparent px-3 py-2.5 text-sm outline-none focus:border-rose"
+            className="w-full rounded-lg glass-input px-3 py-2.5 text-sm"
           />
         </div>
 
@@ -213,7 +213,7 @@ export default function AddMemory() {
                 }
               }}
               placeholder="beach, trip, birthday…"
-              className="flex-1 rounded-lg border border-hairline bg-transparent px-3 py-2.5 text-sm outline-none focus:border-rose"
+              className="flex-1 rounded-lg glass-input px-3 py-2.5 text-sm"
             />
             <button
               type="button"
@@ -269,7 +269,7 @@ export default function AddMemory() {
         <button
           type="submit"
           disabled={saving}
-          className="w-full rounded-pill bg-rose py-3 text-sm font-medium text-white transition hover:bg-rose-dark disabled:opacity-60"
+          className="w-full rounded-pill btn-rose py-3 text-sm font-medium text-white transition disabled:opacity-60"
         >
           {saving ? "Saving…" : "Save memory ❤️"}
         </button>

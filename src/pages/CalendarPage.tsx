@@ -99,7 +99,7 @@ export default function CalendarPage() {
                 key={key}
                 onClick={() => setSelectedDate(d)}
                 className={`relative flex aspect-square flex-col items-center justify-center rounded-lg text-sm transition ${
-                  selected ? "bg-rose text-white" : "hover:bg-surface-raised"
+                  selected ? "btn-rose text-white" : "hover:bg-surface-raised"
                 } ${inMonth ? "" : "text-dim/40"}`}
               >
                 {format(d, "d")}

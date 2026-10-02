@@ -107,7 +107,7 @@ export default function Dashboard() {
       <div className="grid grid-cols-2 gap-3">
         <button
           onClick={() => navigate("/memory/new")}
-          className="rounded-soft bg-rose px-4 py-3.5 text-left text-sm font-medium text-white transition hover:bg-rose-dark"
+          className="rounded-soft btn-rose px-4 py-3.5 text-left text-sm font-medium text-white transition"
         >
           ❤️ Add memory
         </button>

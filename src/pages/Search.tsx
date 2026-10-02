@@ -54,11 +54,11 @@ export default function Search() {
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && runSearch(query)}
           placeholder="beach, birthday, Paris…"
-          className="flex-1 rounded-pill border border-hairline bg-transparent px-4 py-2.5 text-sm outline-none focus:border-rose"
+          className="flex-1 rounded-pill glass-input px-4 py-2.5 text-sm"
         />
         <button
           onClick={() => runSearch(query)}
-          className="rounded-pill bg-rose px-5 py-2.5 text-sm font-medium text-white transition hover:bg-rose-dark"
+          className="rounded-pill btn-rose px-5 py-2.5 text-sm font-medium text-white transition"
         >
           Search
         </button>

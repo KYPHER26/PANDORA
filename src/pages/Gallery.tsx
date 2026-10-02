@@ -45,7 +45,7 @@ function Lightbox({
   }, [index, photos.length, onClose, onNavigate]);
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/90 px-4" onClick={onClose}>
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/55 px-4 backdrop-blur-2xl" onClick={onClose}>
       <button onClick={onClose} className="absolute right-4 top-4 text-2xl text-white/80" aria-label="Close">
         ✕
       </button>
@@ -175,7 +175,7 @@ export default function Gallery() {
         </div>
         <button
           onClick={() => setShowUpload(true)}
-          className="rounded-pill bg-rose px-4 py-2 text-sm font-medium text-white transition hover:bg-rose-dark"
+          className="rounded-pill btn-rose px-4 py-2 text-sm font-medium text-white transition"
         >
           + Upload
         </button>
@@ -188,7 +188,7 @@ export default function Gallery() {
             <button
               onClick={handleUpload}
               disabled={pending.length === 0 || uploading}
-              className="rounded-pill bg-rose px-4 py-2 text-sm text-white disabled:opacity-50"
+              className="rounded-pill btn-rose px-4 py-2 text-sm text-white disabled:opacity-50"
             >
               {uploading ? "Uploading…" : `Save ${pending.length || ""} photo${pending.length === 1 ? "" : "s"}`}
             </button>
@@ -240,7 +240,7 @@ export default function Gallery() {
       {lightboxIndex !== null && flatPhotos[lightboxIndex]?.uploader_id === profile?.id && (
         <button
           onClick={() => deletePhoto(flatPhotos[lightboxIndex])}
-          className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-pill bg-rose px-4 py-2 text-sm text-white"
+          className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-pill btn-rose px-4 py-2 text-sm text-white"
         >
           Delete photo
         </button>

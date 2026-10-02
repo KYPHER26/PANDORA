@@ -30,7 +30,7 @@ export default function Signup() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-ink px-5 py-10">
+    <div className="flex min-h-screen items-center justify-center px-5 py-10">
       <div className="w-full max-w-sm">
         <div className="mb-8 text-center">
           <p className="text-3xl">❤️</p>
@@ -56,7 +56,7 @@ export default function Signup() {
                     required
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
-                    className="w-full rounded-lg border border-hairline bg-transparent px-3 py-2.5 text-sm outline-none focus:border-rose"
+                    className="w-full rounded-lg glass-input px-3 py-2.5 text-sm"
                     placeholder="Ester or Kypher"
                   />
                 </div>
@@ -67,7 +67,7 @@ export default function Signup() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full rounded-lg border border-hairline bg-transparent px-3 py-2.5 text-sm outline-none focus:border-rose"
+                    className="w-full rounded-lg glass-input px-3 py-2.5 text-sm"
                     placeholder="you@example.com"
                   />
                 </div>
@@ -78,7 +78,7 @@ export default function Signup() {
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full rounded-lg border border-hairline bg-transparent px-3 py-2.5 text-sm outline-none focus:border-rose"
+                    className="w-full rounded-lg glass-input px-3 py-2.5 text-sm"
                     placeholder="At least 8 characters"
                   />
                 </div>
@@ -88,7 +88,7 @@ export default function Signup() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full rounded-pill bg-rose py-2.5 text-sm font-medium text-white transition hover:bg-rose-dark disabled:opacity-60"
+                  className="w-full rounded-pill btn-rose py-2.5 text-sm font-medium text-white transition disabled:opacity-60"
                 >
                   {submitting ? "Creating account…" : "Create account"}
                 </button>
