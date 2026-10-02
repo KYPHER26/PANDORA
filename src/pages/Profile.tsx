@@ -5,6 +5,7 @@ import { useSignedUrl } from "../hooks/useSignedUrl";
 import { useNotifications } from "../hooks/useNotifications";
 import { formatDistanceToNow } from "date-fns";
 import ThemeToggle from "../components/ThemeToggle";
+import PushToggle from "../components/PushToggle";
 
 function Avatar({ path, name }: { path: string | null; name?: string }) {
   const url = useSignedUrl(path);
@@ -84,7 +85,7 @@ export default function Profile() {
             type="date"
             value={relStart}
             onChange={(e) => setRelStart(e.target.value)}
-            className="rounded-lg border border-hairline bg-transparent px-3 py-2 text-sm outline-none focus:border-rose"
+            className="rounded-lg glass-input px-3 py-2 text-sm"
           />
         </div>
         <div>
@@ -93,7 +94,7 @@ export default function Profile() {
             type="date"
             value={anniversary}
             onChange={(e) => setAnniversary(e.target.value)}
-            className="rounded-lg border border-hairline bg-transparent px-3 py-2 text-sm outline-none focus:border-rose"
+            className="rounded-lg glass-input px-3 py-2 text-sm"
           />
         </div>
         <div>
@@ -102,13 +103,13 @@ export default function Profile() {
             value={quote}
             onChange={(e) => setQuote(e.target.value)}
             placeholder="Our story, our memories, our space."
-            className="w-full rounded-lg border border-hairline bg-transparent px-3 py-2 text-sm outline-none focus:border-rose"
+            className="w-full rounded-lg glass-input px-3 py-2 text-sm"
           />
         </div>
         <button
           onClick={saveCoupleDetails}
           disabled={saving}
-          className="rounded-pill bg-rose px-4 py-2 text-sm font-medium text-white transition hover:bg-rose-dark disabled:opacity-60"
+          className="rounded-pill btn-rose px-4 py-2 text-sm font-medium text-white transition disabled:opacity-60"
         >
           {saving ? "Saving…" : "Save"}
         </button>
@@ -136,6 +137,8 @@ export default function Profile() {
           </div>
         )}
       </section>
+
+      <PushToggle />
 
       <div className="flex items-center justify-between rounded-soft border border-hairline bg-surface p-5">
         <div>
