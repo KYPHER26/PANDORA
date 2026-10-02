@@ -65,7 +65,7 @@ export default function InstallPrompt() {
       {deferredEvent && (
         <button
           onClick={install}
-          className="shrink-0 rounded-pill bg-rose px-4 py-2 text-sm font-medium text-white transition hover:bg-rose-dark"
+          className="shrink-0 rounded-pill btn-rose px-4 py-2 text-sm font-medium text-white transition"
         >
           Install
         </button>

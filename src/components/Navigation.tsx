@@ -18,7 +18,7 @@ export default function Navigation() {
   return (
     <>
       {/* Desktop sidebar */}
-      <aside className="fixed inset-y-0 left-0 z-40 hidden w-60 flex-col border-r border-hairline bg-surface px-4 py-6 md:flex">
+      <aside className="fixed bottom-3 left-3 top-3 z-40 hidden w-60 flex-col rounded-soft border border-hairline bg-surface px-4 py-6 md:flex">
         <div className="mb-8 px-2">
           <p className="font-display text-lg leading-tight">Ester ❤️ Kypher</p>
           <p className="text-xs text-dim">🔒 Private space</p>
@@ -31,7 +31,7 @@ export default function Navigation() {
               end={item.to === "/"}
               className={({ isActive }) =>
                 `flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition ${
-                  isActive ? "bg-rose/15 text-rose font-medium" : "text-dim hover:bg-surface-raised hover:text-current"
+                  isActive ? "bg-surface-raised font-medium text-rose ring-1 ring-rose/30" : "text-dim hover:bg-surface-raised hover:text-current"
                 }`
               }
             >
@@ -42,7 +42,7 @@ export default function Navigation() {
         </nav>
         <button
           onClick={() => navigate("/memory/new")}
-          className="mb-3 flex items-center justify-center gap-2 rounded-pill bg-rose py-2.5 text-sm font-medium text-white transition hover:bg-rose-dark"
+          className="mb-3 flex items-center justify-center gap-2 rounded-pill btn-rose py-2.5 text-sm font-medium text-white transition"
         >
           + Add memory
         </button>
@@ -54,8 +54,8 @@ export default function Navigation() {
 
       {/* Mobile bottom nav */}
       <nav
-        className="glass fixed inset-x-0 bottom-0 z-40 flex items-center justify-around px-2 py-2 md:hidden"
-        style={{ paddingBottom: "calc(env(safe-area-inset-bottom, 0px) + 0.5rem)" }}
+        className="glass fixed inset-x-3 z-40 flex items-center justify-around rounded-soft px-2 py-2 md:hidden"
+        style={{ bottom: "calc(env(safe-area-inset-bottom, 0px) + 0.75rem)" }}
       >
         {NAV_ITEMS.map((item) => (
           <NavLink
@@ -64,7 +64,7 @@ export default function Navigation() {
             end={item.to === "/"}
             className={({ isActive }) =>
               `flex flex-col items-center gap-0.5 rounded-lg px-2 py-1 text-[11px] transition ${
-                isActive ? "text-rose" : "text-dim"
+                isActive ? "bg-surface-raised text-rose" : "text-dim"
               }`
             }
           >
@@ -80,8 +80,8 @@ export default function Navigation() {
       <button
         onClick={() => navigate("/memory/new")}
         aria-label="Add memory"
-        className="fixed right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-rose text-2xl text-white shadow-glass transition hover:bg-rose-dark md:hidden"
-        style={{ bottom: "calc(env(safe-area-inset-bottom, 0px) + 4.75rem)" }}
+        className="fixed right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full btn-rose text-2xl text-white shadow-glass transition md:hidden"
+        style={{ bottom: "calc(env(safe-area-inset-bottom, 0px) + 5.75rem)" }}
       >
         +
       </button>

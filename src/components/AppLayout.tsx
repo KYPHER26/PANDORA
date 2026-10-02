@@ -27,7 +27,7 @@ export default function AppLayout() {
   return (
     <div className="min-h-screen">
       <Navigation />
-      <main className="mx-auto max-w-2xl px-4 pb-24 pt-6 md:ml-60 md:max-w-3xl md:px-8 md:pb-10">
+      <main className="mx-auto max-w-2xl px-4 pb-32 pt-6 md:ml-[16.5rem] md:max-w-3xl md:px-8 md:pb-10">
         <Outlet />
       </main>
     </div>

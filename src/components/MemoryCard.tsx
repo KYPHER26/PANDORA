@@ -195,11 +195,11 @@ export default function MemoryCard({ memory, showAuthor = true }: { memory: Memo
               onChange={(e) => setCommentText(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && submitComment()}
               placeholder="Write a comment…"
-              className="flex-1 rounded-pill border border-hairline bg-transparent px-3 py-1.5 text-sm outline-none focus:border-rose"
+              className="flex-1 rounded-pill glass-input px-3 py-1.5 text-sm"
             />
             <button
               onClick={submitComment}
-              className="rounded-pill bg-rose px-3 py-1.5 text-sm text-white transition hover:bg-rose-dark"
+              className="rounded-pill btn-rose px-3 py-1.5 text-sm text-white transition"
             >
               Send
             </button>
