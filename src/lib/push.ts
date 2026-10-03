@@ -17,7 +17,7 @@ export function needsHomeScreenInstall(): boolean {
   return isIos && !standalone;
 }
 
-function keyToBytes(base64Url: string): Uint8Array {
+function keyToBytes(base64Url: string): Uint8Array<ArrayBuffer> {
   const padded = (base64Url + "=".repeat((4 - (base64Url.length % 4)) % 4)).replace(/-/g, "+").replace(/_/g, "/");
   const raw = atob(padded);
   const bytes = new Uint8Array(new ArrayBuffer(raw.length));
